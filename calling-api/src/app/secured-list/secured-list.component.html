@@ -1,0 +1,36 @@
+<div class="container golden">
+  <div class="row">
+      <div class="col-12">
+          <h2><b>Secured</b> List of Tickets<span *ngIf="loading">&nbsp;-&nbsp;Loading ...</span></h2>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-12">&nbsp;</div>
+  </div>
+  <div class="row">
+      <div class="col-12">
+          <table class="table table-striped">
+              <thead>
+                  <tr>
+                      <th>ID</th>
+                      <th>Date</th>
+                      <th>Title</th>
+                      <th>Category</th>
+                      <th>Priority</th>
+                      <th>&nbsp;</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let ticket of tickets">
+                      <td>{{ ticket.id }}</td>
+                      <td>{{ ticket.issueDate | date: 'yyyy-MMM-dd'}}</td>
+                      <td>{{ ticket.title }}</td>
+                      <td>{{ ticket.category }}</td>
+                      <td>{{ ticket.priority }}</td>
+                      <td>Edit | Delete</td>
+                    </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>

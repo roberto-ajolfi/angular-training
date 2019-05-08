@@ -1,0 +1,41 @@
+<div class="container">
+    <h2>Reactive Form</h2>
+  <form [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" formControlName="title" required />
+      <span *ngIf="title.touched && !title.valid">Title is mandatory</span>
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea class="form-control" formControlName="description"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="category">Category</label>
+      <select class="form-control" formControlName="category" required>
+        <option value="">-- Select a Category --</option>
+        <option value="Unknown">Unknown</option>
+        <option value="Development">Development</option>
+        <option value="System">System</option>
+      </select>
+      <span *ngIf="category.touched && !category.valid">Category is mandatory</span>
+    </div>
+    <div class="form-group">
+      <label for="priority">Priority</label>
+      <select class="form-control" formControlName="priority" required>
+        <option value="">-- Select a Priority --</option>
+        <option value="Low">Low</option>
+        <option value="Normal">Normal</option>
+        <option value="High">High</option>
+      </select>
+      <span *ngIf="priority.touched && !priority.valid">Priority is mandatory</span>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-success" 
+      [disabled]="!ticketForm.valid">Submit</button>
+    </div>
+  </form>
+  <div class="alert alert-primary" [hidden]="!submitted">
+    {{ debugData }}
+  </div>
+</div>

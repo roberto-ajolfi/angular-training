@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <a routerLink="/ticket/new" class="btn btn-outline-primary btn-small">
+                <i class="fa fa-file-o"></i>&nbsp;Open New Ticket
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">&nbsp;</div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Priority</th>
+                        <th>Category</th>
+                        <th>Title</th>
+                        <th>State</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let ticket of tickets">
+                        <td>{{ ticket.issueDate | date: 'yyyy-MMM-dd'}}</td>
+                        <td>{{ ticket.priority }}</td>
+                        <td>{{ ticket.category }}</td>
+                        <td>{{ ticket.title }}</td>
+                        <td>{{ ticket.state }}</td>
+                        <td>
+                            <a [routerLink]="['/ticket/edit', ticket.id]" class="btn btn-outline-info btn-sm">
+                                <i class="fa fa-pencil-square-o"></i>&nbsp;Edit
+                            </a>&nbsp;
+                            <a [routerLink]="['/ticket/delete', ticket.id]" class="btn btn-warning btn-sm">
+                                <i class="fa fa-trash"></i>&nbsp;Delete
+                            </a>
+                        </td>
+                      </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+  </div>

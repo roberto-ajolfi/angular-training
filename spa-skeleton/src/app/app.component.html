@@ -1,0 +1,25 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<nav class="navbar-dark navbar-expand-sm navbar-toggleable-sm bg-dark ng-white border-bottom 
+    box-shadow mb-3 navbar navbar-light">
+  <div class="container">
+    <a aria-current="page" class="navbar-brand" href="/"><img src="../assets/Logo.jpg">&nbsp;Help Desk System</a>
+    <button type="button" class="mr-2 navbar-toggler">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="d-sm-inline-flex flex-sm-row-reverse collapse navbar-collapse">
+      <ul class="navbar-nav flex-grow">
+        <li class="nav-item">
+          <a routerLink="/home" routerLinkActive="active" class="nav-link" href="/"><i class="fa fa-home"></i>&nbsp;Home</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/tickets" routerLinkActive="active" class="nav-link" href="/ticketlist" ><i class="fa fa-table"></i>&nbsp;Tickets List</a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="/about" routerLinkActive="active" class="nav-link" href="/about"><i class="fa fa-info-circle"></i>&nbsp;About</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

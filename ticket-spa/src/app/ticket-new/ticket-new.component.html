@@ -1,0 +1,75 @@
+<form #formData="ngForm" (ngSubmit)="onSubmit()">
+  <div class="container">
+    <div class="row form-group">
+      <div class="col-12">
+        <h1>Open New Ticket</h1>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-3">
+        <label for="title">Title</label>
+      </div>
+      <div class="col-9">
+        <input type="text" class="form-control" id="title"
+                required
+                [(ngModel)]="model.title" name="title"
+                #title="ngModel">
+        <span *ngIf="title.touched && !title.valid">Title is mandatory</span>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-3">
+        <label for="description">Description</label>
+      </div>
+      <div class="col-9">
+        <textarea class="form-control" id="description"
+          [(ngModel)]="model.description" name="description"
+          #description="ngModel"></textarea>
+      </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-3">
+          <label for="category">Category</label>
+        </div>
+        <div class="col-3">
+          <select class="form-control" id="category"
+            required
+            [(ngModel)]="model.category" name="category"
+            #category="ngModel">
+            <option value="">-- Select a Category --</option>
+            <option value="Unknown">Unknown</option>
+            <option value="Development">Development</option>
+            <option value="System">System</option>
+          </select>
+          <span *ngIf="category.touched && !category.valid">Category is mandatory</span>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-3">
+            <label for="priority">Priority</label>
+        </div>
+        <div class="col-3">
+          <select class="form-control" id="priority"
+                  required
+                  [(ngModel)]="model.priority" name="priority"
+                  #priority="ngModel">
+            <option value="">-- Select a Priority --</option>
+            <option value="Low">Low</option>
+            <option value="Normal">Normal</option>
+            <option value="High">High</option>
+          </select>
+          <span *ngIf="priority.touched && !priority.valid">Priority is mandatory</span>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-6">
+          <button type="submit" class="btn btn-lg btn-primary" 
+            [disabled]="!formData.form.valid">Submit
+          </button>
+        </div>
+        <div class="col-6">
+          <a routerLink="/tickets" class="btn btn-lg btn-outline-secondary">Cancel</a>
+        </div>
+    </div>
+  </div>
+</form>

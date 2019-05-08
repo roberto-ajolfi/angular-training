@@ -1,0 +1,19 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<div>
+  <h2>Today is {{currentDate}}</h2>
+  <h2>Formatted today is {{currentDate | date: 'dd-MMM-yyyy'}}</h2>
+  <h2>Format date toggle is {{currentDate | date: format}}</h2>
+  <button (click)="toggleFormat()">Toggle Date Format</button>
+  <h2>Chain of pipes {{currentDate | date: 'dd-MMM-yyyy' | uppercase}}</h2>
+  <h2>Custom pipe</h2> 
+  <form #formData="ngForm">
+    <input [(ngModel)]="mantissa" type="number" name="mantissa"/> raised to <input [(ngModel)]="exp" type="number" name="exp"/> 
+    <span> = {{mantissa | exponentialstrength: exp}}</span>
+  </form>
+</div>
+

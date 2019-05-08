@@ -1,0 +1,6 @@
+  <div [ngStyle]="customStyle"> third-component works!</div>
+  <div [style.background-color]="color">Another label with style.</div>
+  <div>
+    <button (click)="toggleStyle()">Toggle Style</button>
+  </div>
+  <div [ngStyle]="toggleStyle2()">And last but not least ...</div>
