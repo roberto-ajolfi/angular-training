@@ -1,0 +1,59 @@
+{
+  "tickets": [
+    {
+      "id": 2,
+      "issueDate": "2019-04-01T00:00:00",
+      "category": "Development",
+      "priority": "High",
+      "title": "Travel app broken",
+      "description": "I cannot add any expenses to the request #WW-0001",
+      "state": "Processing"
+    },
+    {
+      "id": 3,
+      "issueDate": "2019-03-14T00:00:00",
+      "category": "Unknown",
+      "priority": "Low",
+      "title": "Blank screen",
+      "description": "My laptop screen went black.",
+      "state": "New"
+    },
+    {
+      "id": 4,
+      "issueDate": "2019-01-21T00:00:00",
+      "category": "Development",
+      "priority": "Normal",
+      "title": "New Sharepoint library",
+      "description": "I need a new public SP library, named 'HR Documents'",
+      "state": "Closed"
+    },
+    {
+      "issueDate": "2019-04-01T00:00:00",
+      "category": "Development",
+      "priority": "High",
+      "title": "Travel app broken NEW",
+      "description": "I cannot add any expenses to the request #WW-0001",
+      "state": "Processing",
+      "id": 5
+    },
+    {
+      "issueDate": "2019-04-01T00:00:00",
+      "category": "Development",
+      "priority": "High",
+      "title": "Travel app broken NEW",
+      "description": "I cannot add any expenses to the request #WW-0001",
+      "state": "Processing",
+      "id": 6
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "name": "iCubed"
+    },
+    {
+      "id": 2,
+      "name": "ZeusLab"
+    }
+  ]
+}
