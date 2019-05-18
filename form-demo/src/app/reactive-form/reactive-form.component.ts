@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import * as moment from 'moment';
 
 @Component({
   selector: 'reactive-form',
@@ -15,7 +16,8 @@ export class ReactiveFormComponent implements OnInit {
     title: new FormControl('', Validators.required),
     description: new FormControl(''),
     category: new FormControl('', Validators.required),
-    priority: new FormControl('Low', Validators.required)
+    priority: new FormControl('Low', Validators.required),
+    issueDate: new FormControl(moment())
   });
 
   constructor() { }
@@ -37,8 +39,14 @@ export class ReactiveFormComponent implements OnInit {
     return this.ticketForm.get('priority');
   }
 
+  get issueDate() {
+    return this.ticketForm.get('issueDate').value;
+  }
+
   onSubmit() {
-    this.debugData = JSON.stringify({ ...this.ticketForm.value, issueDate: new Date(), state: 'New' });
+    console.log('Issue Date: ' + this.ticketForm.get('issueDate').value);
+    //this.debugData = JSON.stringify({ ...this.ticketForm.value, issueDate: new Date(), state: 'New' });
+    this.debugData = JSON.stringify({ ...this.ticketForm.value, state: 'New' });
     this.submitted = true;
   }
 
