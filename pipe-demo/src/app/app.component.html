@@ -10,6 +10,11 @@
   <h2>Format date toggle is {{currentDate | date: format}}</h2>
   <button (click)="toggleFormat()">Toggle Date Format</button>
   <h2>Chain of pipes {{currentDate | date: 'dd-MMM-yyyy' | uppercase}}</h2>
+  <h2>Number of Days (10) {{ 10 | numberOfDays: 8 }}</h2>
+  <h2>Number of Days (16) {{ 16 | numberOfDays: 8 }}</h2>
+  <h2>Number of Days (8) {{ 8 | numberOfDays: 8 }}</h2>
+  <h2>Number of Days (5) {{ 5 | numberOfDays: 8 }}</h2>
+  <h2>Number of Days (4) {{ 4 | numberOfDays: 8 }}</h2>
   <h2>Custom pipe</h2> 
   <form #formData="ngForm">
     <input [(ngModel)]="mantissa" type="number" name="mantissa"/> raised to <input [(ngModel)]="exp" type="number" name="exp"/> 

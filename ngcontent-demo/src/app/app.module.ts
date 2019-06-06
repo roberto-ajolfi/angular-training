@@ -1,20 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { ExponentialstrengthPipe } from './exponentialstrength.pipe';
-import { NumberOfDaysPipe } from './number-of-days.pipe';
+import { MyButtonComponent } from './my-button/my-button.component';
+import { MyButtonWithIconComponent } from './my-button-with-icon/my-button-with-icon.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ExponentialstrengthPipe,
-    NumberOfDaysPipe
+    MyButtonComponent,
+    MyButtonWithIconComponent
   ],
   imports: [
-    BrowserModule,
-    FormsModule
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
