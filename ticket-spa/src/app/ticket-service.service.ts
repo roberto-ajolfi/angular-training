@@ -3,14 +3,15 @@ import Ticket from './Ticket';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
-import { TicketNewComponent } from './ticket-new/ticket-new.component';
+import TicketEdit from './TicketEdit';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TicketService {
 
-  private ticketsUrl = 'https://icticketing.azurewebsites.net/api/ticket';  // URL to web api
+  //private ticketsUrl = 'https://icticketing.azurewebsites.net/api/ticketanon';  // URL to web api
+  private ticketsUrl = 'https://localhost:44328/api/ticketanon';  // URL to web api
 
   constructor(public httpClient: HttpClient) { }
 
@@ -28,7 +29,7 @@ export class TicketService {
     });
   }
 
-  createTicket(ticket:Ticket): Observable<Ticket> {
+  createTicket(ticket:TicketEdit): Observable<Ticket> {
     const headers = new HttpHeaders();
     headers.set('Accept', 'application/json');
     headers.set('Content-Type', 'application/json');
@@ -39,7 +40,7 @@ export class TicketService {
     );
   }
 
-  updateTicket(ticket: Ticket): Observable<Ticket> {
+  updateTicket(ticket: TicketEdit): Observable<Ticket> {
     const headers = new HttpHeaders();
     headers.set('Accept', 'application/json');
     headers.set('Content-Type', 'application/json');

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import Ticket from '../Ticket';
 import { TicketService } from '../ticket-service.service';
 import { Router } from '@angular/router';
+import TicketEdit from '../TicketEdit';
 
 @Component({
   selector: 'app-ticket-new',
@@ -11,20 +12,20 @@ import { Router } from '@angular/router';
 export class TicketNewComponent implements OnInit {
 
   submitted: boolean = false;
-  model: Ticket;
+  model: TicketEdit;
   
   constructor(private ticketService: TicketService, private router: Router) { 
-    this.model = new Ticket(0, null, '', '', '', 'Low', '');
+    this.model = new TicketEdit(0, null, 0, '', '', 0, 0);
   }
 
   ngOnInit() {
   }
 
   onSubmit() {
-    this.model.state = 'New';
+    this.model.stateid = 1;
     this.model.issueDate = new Date();
     
-    this.ticketService.createTicket(this.model as Ticket)
+    this.ticketService.createTicket(this.model as TicketEdit)
     .subscribe(resp => {
       this.router.navigate(['/tickets'])
     });
